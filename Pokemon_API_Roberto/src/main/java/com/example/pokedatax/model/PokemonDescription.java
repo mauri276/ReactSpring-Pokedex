@@ -8,6 +8,7 @@ import java.util.List;
 
 @Builder
 @Getter
+@Setter
 public class PokemonDescription {
 
     private List<flavor_text_entries> flavor_text_entries;
