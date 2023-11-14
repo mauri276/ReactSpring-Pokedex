@@ -7,6 +7,7 @@ import lombok.Setter;
 import java.util.List;
 
 @Builder
+@Setter
 @Getter
 public class Pokemon {
     private int id;
