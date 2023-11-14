@@ -3,7 +3,7 @@ import ClientService from './services/ClientService'
 
 function App() {
 
-  ClientService.getPokemon("pichu").then(response => {
+  ClientService.getPokemon("shuckle").then(response => {
     console.log(response.data);
   }).catch(error => {
     console.log(error);

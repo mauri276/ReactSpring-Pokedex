@@ -8,6 +8,9 @@ import com.example.pokedatax.model.TypeDetails;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @CrossOrigin(origins = "http://127.0.0.1:5173/")
 @RestController
 @RequestMapping("/api")
@@ -30,15 +33,34 @@ public class PokemonController {
                 break;
             }
         }
+        //Creamos una lista de string que contendra las debilidades
+        List<String> weaknesses = new ArrayList<>();
+        //Listamos los tipos
+        List<Pokemon.Types> types = pokemon.getTypes();
+        //Iteramos por cada tipo
+        for (Pokemon.Types type : types) {
+            //Sacamos el nombre del tipo
+            String typeName = type.getType().getName();
+            //Consultamos la api para sacar las relaciones de daño
+            TypeDetails typeDetails = pokemonClientApi.getTypeDetails(typeName);
+            List<TypeDetails.double_damage_from> doubleDamageFrom = typeDetails.getDamage_relations().getDouble_damage_from();
+            //Añadimos los nombres de las debilidades en la lista antes creada
+            for (TypeDetails.double_damage_from weakness : doubleDamageFrom) {
+                weaknesses.add(weakness.getName());
+            }
+        }
+        pokemon.setDebilidades(weaknesses);
 
-        /*for (Pokemon.Types type : pokemon.getTypes()) {
-            TypeDetails typeDetails = pokemonClientApi.getTypeDetails(String.valueOf(type.getType().getId()));
-            Pokemon.TypeDetails pokemonTypeDetails = new Pokemon.TypeDetails();
-            pokemonTypeDetails.setName(typeDetails.getName());
-            pokemonTypeDetails.setId(typeDetails.getId());
-            type.setType(pokemonTypeDetails);
+        pokemon.getStats().get(0).setName("Vida");
+        pokemon.getStats().get(1).setName("Ataque");
+        pokemon.getStats().get(2).setName("Defensa");
+        pokemon.getStats().get(3).setName("Ataque especial");
+        pokemon.getStats().get(4).setName("Defensa especial");
+        pokemon.getStats().get(5).setName("Velocidad");
 
-        }*/
+
+
+
 
 
         return pokemon;

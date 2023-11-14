@@ -18,6 +18,7 @@ public class Pokemon {
     private List<Stats> stats;
     private List<TypeDetails> weaknesses;
     private List<damage_relations> doubledamage;
+    private List<String> debilidades;
     private List<Description> description;
     private String flavor_text;
     @Setter
