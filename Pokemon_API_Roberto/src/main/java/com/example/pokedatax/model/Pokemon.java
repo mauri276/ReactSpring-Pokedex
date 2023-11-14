@@ -21,12 +21,31 @@ public class Pokemon {
     private List<String> debilidades;
     private List<Description> description;
     private String flavor_text;
+    private String imagen;//Aca se guardara la imagen que pondremos en el front
+    private Sprites sprites;//Este objeto es para buscar la imagen, recuerda que en las apis {} son clases
     @Setter
     @Getter
     public static class Types{
 
         private TypeDetails type;
 
+    }
+    @Getter
+    @Setter
+    public static class Sprites{
+        private Other other;
+        private String back_default;//Este fue una prueba, trae la imagen de atras del pokemon
+    }
+    @Getter
+    @Setter
+
+    public static class Other{
+        private dream_world dream_world;// Buscamos nuevamente en la api el objeto deseado
+    }
+    @Getter
+    @Setter
+    public static class dream_world{
+        private String front_default;//Este es la imagen que deseamos.
     }
 
 

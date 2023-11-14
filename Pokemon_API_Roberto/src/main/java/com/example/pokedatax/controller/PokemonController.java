@@ -51,6 +51,11 @@ public class PokemonController {
         }
         pokemon.setDebilidades(weaknesses);
 
+
+        //Al string imagen, le buscamos por la parte del sprite hasta llegar al a imagen que necesitamos.
+        pokemon.setImagen(pokemon.getSprites().getOther().getDream_world().getFront_default());
+
+
         pokemon.getStats().get(0).setName("Vida");
         pokemon.getStats().get(1).setName("Ataque");
         pokemon.getStats().get(2).setName("Defensa");
