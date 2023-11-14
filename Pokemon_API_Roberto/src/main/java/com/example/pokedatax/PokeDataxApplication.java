@@ -21,7 +21,7 @@ public class PokeDataxApplication {
     @Bean
     public CommandLineRunner run (PokemonClientApi pokemonClientApi){
         return args -> {
-            Pokemon pokemon = pokemonClientApi.getDataPokemon("pichu");
+            Pokemon pokemon = pokemonClientApi.getDataPokemon("shuckle");
             GenerateData data = new GenerateData(pokemon,pokemonClientApi);
             data.getInformation();
         };
