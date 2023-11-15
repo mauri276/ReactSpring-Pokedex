@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import ClientService from "../services/ClientService";
 import Form from "./Form";
 import Resultados from "./Resultados"
+import '../stylesheets/components/Pokedex.css';
 
-function Pantalla (props) {
+function Pokedex (props) {
 
     const [pokemonData, setPokemonData] = useState (null);
 
@@ -17,16 +18,23 @@ function Pantalla (props) {
     }
 
     return(
-        <>
-            <div className="main-container">
-                
+        <div className="main-pokedex_container">
+            <div className="col-1">
                 <Form 
                     onSubmit={ buscarPokemon }
                 />
+                <div className="control-pokedex_container">
+                    <img src="/img/control-pokedex.png" className="control-pokedex_img" alt="Control-Pokedex" />
+                </div>
+            </div>
+            <div className="col-2">
                 <Resultados pokemonData = { pokemonData } />
             </div>
-        </>
+            <div className="col-3">
+
+            </div>
+        </div>
     )
 }
 
-export default Pantalla;
+export default Pokedex;

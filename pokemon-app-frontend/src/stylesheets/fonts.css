@@ -1,0 +1,6 @@
+/* Aquí van todas las fuentes en uso */
+
+@font-face { 
+    font-family: 'PokemonGB'; 
+    src: url('/fonts/Pokemon_GB.ttf') format('truetype'); 
+}
