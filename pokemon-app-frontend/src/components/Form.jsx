@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import Boton from './Boton'
+import '../stylesheets/components/Form.css'
 
 function Form (props) {
 
@@ -14,15 +16,20 @@ function Form (props) {
     }
 
     return(
-        <form onSubmit={ manejarEnvio }>
-            <input 
-                type="text"
-                className="pokemon-input"
-                placeholder="Escribe el nombre de un Pokemon"
-                onChange={ manejarCambio }
-            />
-            <button className="btn-input">Buscar Pokemon</button>
-        </form>
+        <div className="form_container">
+            <form onSubmit={ manejarEnvio }>
+                <input 
+                    type="text"
+                    className="pokemon_input"
+                    placeholder="NOMBRE DEL POKEMÓN"
+                    onChange={ manejarCambio }
+                />
+                <div className="btn_group">
+                    <Boton btn_clear = {true} />
+                    <Boton btn_clear = {false} />
+                </div>
+            </form>
+        </div>
     )
 }
 

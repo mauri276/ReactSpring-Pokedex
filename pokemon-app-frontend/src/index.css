@@ -1,0 +1,9 @@
+@import './stylesheets/normalizer.css';
+@import './stylesheets/colors.css';
+@import './stylesheets/fonts.css';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}

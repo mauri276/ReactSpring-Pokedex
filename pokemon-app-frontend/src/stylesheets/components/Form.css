@@ -1,0 +1,37 @@
+.form_container {
+  background: var(--control-pokedex_background);
+  padding: 0.781vw;
+  border: .3vw double var(--black);
+  border-radius: 1vw;
+  outline: .15vw solid black;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.form_container form {
+  display: flex;
+  flex-direction: column;
+  gap: .8em;
+}
+
+.pokemon_input {
+  background-color: var(--green);
+  letter-spacing: -.1em;
+  border: .3vw double var(--black);
+  border-radius: 1vw;
+  outline: .1vw solid black;
+  padding: .2vw .5vw;
+}
+
+.pokemon_input::placeholder {
+  color: var(--black);
+  letter-spacing: .1em;
+}
+
+.btn_group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: .5em;
+}
