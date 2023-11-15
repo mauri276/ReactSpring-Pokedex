@@ -3,6 +3,7 @@ package com.example.pokedatax.model;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
+import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
@@ -23,6 +24,8 @@ public class Pokemon {
     private String flavor_text;
     private String imagen;//Aca se guardara la imagen que pondremos en el front
     private Sprites sprites;//Este objeto es para buscar la imagen, recuerda que en las apis {} son clases
+    private String imagenOficial;
+
     @Setter
     @Getter
     public static class Types{
@@ -32,16 +35,31 @@ public class Pokemon {
     }
     @Getter
     @Setter
+    public static class Artwork{
+        private String front_default;
+    }
+    @Getter
+    @Setter
     public static class Sprites{
         private Other other;
         private String back_default;//Este fue una prueba, trae la imagen de atras del pokemon
     }
     @Getter
     @Setter
-
     public static class Other{
         private dream_world dream_world;// Buscamos nuevamente en la api el objeto deseado
+        private home home;
+        @SerializedName("official-artwork")
+        private Artwork officialArtwork;
+
     }
+    @Setter
+    @Getter
+    public  static class home{
+        private String front_default;
+    }
+
+
     @Getter
     @Setter
     public static class dream_world{
