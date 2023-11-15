@@ -1,12 +1,14 @@
 import './App.css'
-import Pantalla from './components/Pantalla.jsx';
+import Pokedex from './components/Pokedex.jsx';
 
 function App() {
 
   return (
-    <>
-      <Pantalla></Pantalla>
-    </>
+
+    <div className='main-container'>
+      <Pokedex />
+    </div>
+    
   )
 }
 

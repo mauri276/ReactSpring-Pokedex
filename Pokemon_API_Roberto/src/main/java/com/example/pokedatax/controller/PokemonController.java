@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@CrossOrigin(origins = "http://127.0.0.1:5173/")
+@CrossOrigin(origins = "http://localhost:5173/")
 @RestController
 @RequestMapping("/api")
 public class PokemonController {
@@ -50,6 +50,13 @@ public class PokemonController {
             }
         }
         pokemon.setDebilidades(weaknesses);
+
+
+        //Al string imagen, le buscamos por la parte del sprite hasta llegar al a imagen que necesitamos.
+        pokemon.setImagen(pokemon.getSprites().getOther().getDream_world().getFront_default());
+        pokemon.setImagenOficial(pokemon.getSprites().getOther().getOfficialArtwork().getFront_default());
+        //pokemon.setImagenOficial(pokemon.getSprites().getOther().getHome().getFront_default());
+
 
         pokemon.getStats().get(0).setName("Vida");
         pokemon.getStats().get(1).setName("Ataque");

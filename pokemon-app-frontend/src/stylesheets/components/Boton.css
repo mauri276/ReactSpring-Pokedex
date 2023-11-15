@@ -1,0 +1,18 @@
+.form_btn {
+  width: fit-content;
+  border-radius: 100%;
+  border: .3vw double var(--black);
+  outline: .15vw solid black;
+}
+
+.form_btn img {
+  width: 1.563vw;
+  height: 1.563vw;
+  border-radius: inherit;
+  vertical-align: bottom;
+}
+
+.form_btn[type="submit"] img {
+  width: 2.604vw;
+  height: 2.604vw;
+}
