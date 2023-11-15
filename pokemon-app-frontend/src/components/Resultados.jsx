@@ -1,17 +1,19 @@
 import React, { useState } from "react";
 
-function Resultados ( pokemonData ) {
-    const { data } = pokemonData;
+function Resultados ( props ) {
 
-    if (!data) { 
+    if (!props.pokemonData) { 
         return <p>No hay datos</p>;
     }
     
     return (
         <>
-            <h2>
-                {data.name}
+            <h2>  
+                Nombre: {props.pokemonData.name}
             </h2>
+            <p>
+                Descripción: {props.pokemonData.flavor_text}
+            </p>
         </>
     );
 }
