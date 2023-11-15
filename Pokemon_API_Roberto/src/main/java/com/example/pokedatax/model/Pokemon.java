@@ -1,5 +1,6 @@
 package com.example.pokedatax.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
@@ -36,7 +37,7 @@ public class Pokemon {
     @Getter
     @Setter
     public static class Artwork{
-        private String front_default;
+        public String front_default;
     }
     @Getter
     @Setter
@@ -49,8 +50,8 @@ public class Pokemon {
     public static class Other{
         private dream_world dream_world;// Buscamos nuevamente en la api el objeto deseado
         private home home;
-        @SerializedName("official-artwork")
-        private Artwork officialArtwork;
+        @JsonProperty("official-artwork")
+        public Artwork officialArtwork;
 
     }
     @Setter

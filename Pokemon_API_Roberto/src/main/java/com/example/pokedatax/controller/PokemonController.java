@@ -54,7 +54,8 @@ public class PokemonController {
 
         //Al string imagen, le buscamos por la parte del sprite hasta llegar al a imagen que necesitamos.
         pokemon.setImagen(pokemon.getSprites().getOther().getDream_world().getFront_default());
-        pokemon.setImagenOficial(pokemon.getSprites().getOther().getHome().getFront_default());
+        pokemon.setImagenOficial(pokemon.getSprites().getOther().getOfficialArtwork().getFront_default());
+        //pokemon.setImagenOficial(pokemon.getSprites().getOther().getHome().getFront_default());
 
 
         pokemon.getStats().get(0).setName("Vida");
