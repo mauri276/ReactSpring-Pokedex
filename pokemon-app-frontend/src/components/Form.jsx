@@ -7,12 +7,17 @@ function Form (props) {
     const [input, setInput] = useState('');
 
     const manejarCambio = e => {
-        setInput(e.target.value);
+        let valorActual = e.target.value.toLowerCase(); 
+        setInput(valorActual);
+
+
     }
+
 
     const manejarEnvio = e => {
         e.preventDefault();
         props.onSubmit(input);
+        
     }
 
     return(
