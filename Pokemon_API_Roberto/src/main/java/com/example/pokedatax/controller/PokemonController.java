@@ -25,6 +25,7 @@ public class PokemonController {
         try {
             Pokemon pokemon = pokemonClientApi.getDataPokemon(name);
             PokemonDescription description = pokemonClientApi.getPokemonDescription(name);
+            
 
             //For each para iterar cada descripción
             for (PokemonDescription.flavor_text_entries entry : description.getFlavor_text_entries()) {
