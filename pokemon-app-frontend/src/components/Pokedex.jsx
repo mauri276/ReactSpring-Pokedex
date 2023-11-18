@@ -31,7 +31,7 @@ function Pokedex (props) {
                 <Resultados pokemonData = { pokemonData } />
             </div>
             <div className="col-3">
-
+                <p>columna 3</p>
             </div>
         </div>
     )
