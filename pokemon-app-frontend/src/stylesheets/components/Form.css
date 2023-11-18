@@ -1,12 +1,11 @@
 .form_container {
   background: var(--control-pokedex_background);
-  padding: 0.781vw;
-  border: .3vw double var(--black);
+  padding: 5%;
+  border: .31vw double var(--black);
   border-radius: 1vw;
   outline: .15vw solid black;
   display: flex;
   flex-direction: column;
-  gap: 1em;
 }
 
 .form_container form {
@@ -22,6 +21,7 @@
   border-radius: 1vw;
   outline: .1vw solid black;
   padding: .2vw .5vw;
+  font-size: 0.625vw;
 }
 
 .pokemon_input::placeholder {
