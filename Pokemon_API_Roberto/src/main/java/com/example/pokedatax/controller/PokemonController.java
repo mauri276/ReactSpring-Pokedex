@@ -25,7 +25,7 @@ public class PokemonController {
         try {
             Pokemon pokemon = pokemonClientApi.getDataPokemon(name);
             PokemonDescription description = pokemonClientApi.getPokemonDescription(name);
-            
+
 
             //For each para iterar cada descripción
             for (PokemonDescription.flavor_text_entries entry : description.getFlavor_text_entries()) {
@@ -52,6 +52,13 @@ public class PokemonController {
                 }
             }
             pokemon.setDebilidades(weaknesses);
+            //Cree las variables tipo 1 y tipo 2 en la clase Pokemon, seteo tipo 1 agarrando de la lista de tipos la posi 0
+            pokemon.setTipo1(pokemon.getTypes().get(0).getType().getName());
+            //Verifico que el tamaño sea mayor a 1 para que no me de out of bounds y sacar el tipo 2 si tiene
+            if(pokemon.getTypes().size() >1){
+                pokemon.setTipo2(pokemon.getTypes().get(1).getType().getName());
+            }
+
 
 
             //Al string imagen, le buscamos por la parte del sprite hasta llegar al a imagen que necesitamos.
