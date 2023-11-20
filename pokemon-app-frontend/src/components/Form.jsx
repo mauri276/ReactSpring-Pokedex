@@ -7,10 +7,8 @@ function Form (props) {
     const [input, setInput] = useState('');
 
     const manejarCambio = e => {
-        let valorActual = e.target.value.toLowerCase(); 
+        let valorActual = e.target.value.toLowerCase();
         setInput(valorActual);
-
-
     }
 
 

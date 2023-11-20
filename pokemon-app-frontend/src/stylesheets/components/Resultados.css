@@ -1,15 +1,38 @@
 .pantalla-pokedex_container {
   display: flex;
-  flex-direction: row;
-  align-items: end;
-  width: 90%;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 100%;
   height: 70%;
   background-color: var(--white);
+  border: .3vw double var(--border_pantalla-light-gray);
+  border-top: 0px;
+  outline: .13vw solid var(--black);
+  padding: 0 5%;
+}
+
+.col-pantalla-type {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  height: 100%;
+  gap: 2em;
+  align-items: center;
+}
+
+.pokemon_name {
+  text-transform: capitalize;
+  text-align: center;
+}
+
+.pokemon-information_container{
+  display: flex;
+  flex-direction: row;
+  align-items: end;
 }
 
 .pokemon-img_container {
-  height: 100%;
-  width: fit-content;
+  flex-basis: 40%;
 }
 
 .pokemon_img {
@@ -17,4 +40,69 @@
   object-position: bottom;
   width: 100%;
   height: 100%;
+}
+
+.stats_container {
+  display: flex;
+  padding: 0 0 6% 5%;
+  flex-basis: 60%;
+  flex-direction: column;
+}
+
+.type_container{
+  background-color: var(--black);
+  padding: 2.5% 5%;
+  background-color: var(--control-pokedex_background);
+  border: .3vw double var(--black);
+  outline: .15vw solid var(--black);
+  border-radius: 1vw;
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.description_container {
+  background-color: var(--black);
+  padding: 2.5% 5%;
+  background-color: var(--control-pokedex_background);
+  border: .3vw double var(--black);
+  outline: .15vw solid var(--black);
+  border-radius: 1vw;
+  height: 55%;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pokemon-type_textarea {
+  resize: none;
+  border: .3vw double var(--black);
+  border-radius: 1vw;
+  outline: .1vw solid var(--black);
+  padding: .2vw .5vw;
+  font-size: 0.625vw;
+  background-color: var(--green);
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+.pokemon-description_textarea {
+  resize: none;
+  background-color: var(--green);
+  width: 100%;
+  height: 100%;
+  border: .2vw double var(--black);
+  border-top: 0px;
+  outline: .12vw solid var(--black);
+  font-size: 0.625vw;
+  padding: .2vw .5vw;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+.pokemon-description_textarea::-webkit-scrollbar, .pokemon-type_textarea::-webkit-scrollbar {
+  display: none;
 }

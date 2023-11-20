@@ -3,7 +3,7 @@
   padding: 5%;
   border: .31vw double var(--black);
   border-radius: 1vw;
-  outline: .15vw solid black;
+  outline: .15vw solid var(--black);
   display: flex;
   flex-direction: column;
 }
@@ -19,14 +19,16 @@
   letter-spacing: -.1em;
   border: .3vw double var(--black);
   border-radius: 1vw;
-  outline: .1vw solid black;
+  outline: .1vw solid var(--black);
   padding: .2vw .5vw;
   font-size: 0.625vw;
+  font-weight: 800;
 }
 
 .pokemon_input::placeholder {
   color: var(--black);
   letter-spacing: .1em;
+  font-weight: 800;
 }
 
 .btn_group {
