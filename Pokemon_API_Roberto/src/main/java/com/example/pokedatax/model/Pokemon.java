@@ -16,6 +16,8 @@ public class Pokemon {
     private String name;
     private double height;
     private double weight;
+    private String tipo1;
+    private String tipo2;
     private List<Types> types;
     private List<Stats> stats;
     private List<TypeDetails> weaknesses;
