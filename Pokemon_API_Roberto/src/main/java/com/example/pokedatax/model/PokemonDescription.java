@@ -10,7 +10,6 @@ import java.util.List;
 @Getter
 @Setter
 public class PokemonDescription {
-
     private List<flavor_text_entries> flavor_text_entries;
     private String name;
     private String version;
@@ -34,7 +33,5 @@ public class PokemonDescription {
     public static class language{
         private String name;
     }
-
-
 }
 
