@@ -3,7 +3,19 @@ import Stats from './Stats.jsx';
 import '../stylesheets/components/Resultados.css';
 
 function Resultados ( props ) {
-    
+
+    const extraerTipo = data => {
+        if (data){
+            if (data.tipo2 != null){
+                return data.tipo1 + ',' + data.tipo2;
+            } else {
+                return data.tipo1;
+            }
+        } else {
+            return "Type";
+        }
+    }
+
     return (
         <>
             <div className="col-pantalla-type">
@@ -19,7 +31,7 @@ function Resultados ( props ) {
                     </div>
                 </div>
                 <div className="type_container">
-                    <textarea name="" id="" readOnly className="pokemon-type_textarea" value={props.pokemonData ? props.pokemonData.types[0].type.name : "Type"}/>
+                    <textarea name="" id="" readOnly className="pokemon-type_textarea" value={ extraerTipo(props.pokemonData) }/>
                 </div>
             </div>
             <div className="description_container">

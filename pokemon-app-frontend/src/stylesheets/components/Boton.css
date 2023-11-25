@@ -12,7 +12,12 @@
   vertical-align: bottom;
 }
 
+.form_btn:active {
+  transform: scale(0.9);
+}
+
 .form_btn[type="submit"] img {
   width: 2.604vw;
   height: 2.604vw;
 }
+
