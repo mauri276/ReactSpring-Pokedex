@@ -25,5 +25,4 @@ public class TypeDetails {
         private String name;
         private int id;
     }
-
 }

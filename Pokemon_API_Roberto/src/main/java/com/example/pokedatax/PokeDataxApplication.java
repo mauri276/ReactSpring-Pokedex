@@ -1,7 +1,6 @@
 package com.example.pokedatax;
 
 import com.example.pokedatax.client.PokemonClientApi;
-import com.example.pokedatax.controller.GenerateData;
 import com.example.pokedatax.model.Pokemon;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -16,15 +15,13 @@ import org.springframework.context.annotation.Bean;
 public class PokeDataxApplication {
 
     public static void main(String[] args) {
+        double start= System.currentTimeMillis();
+        double end;
+
         SpringApplication.run(PokeDataxApplication.class, args);
+        end = System.currentTimeMillis();
+        System.out.println(end-start);
     }
-    @Bean
-    public CommandLineRunner run (PokemonClientApi pokemonClientApi){
-        return args -> {
-            Pokemon pokemon = pokemonClientApi.getDataPokemon("snorlax");
-            GenerateData data = new GenerateData(pokemon,pokemonClientApi);
-            data.getInformation();
-        };
-    }
+
 
 }
