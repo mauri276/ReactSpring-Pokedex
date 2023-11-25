@@ -3,10 +3,8 @@ package com.example.pokedatax.controller;
 import com.example.pokedatax.client.PokemonClientApi;
 import com.example.pokedatax.model.Pokemon;
 import com.example.pokedatax.model.PokemonDescription;
-import com.example.pokedatax.model.TypeDetail;
 import com.example.pokedatax.model.TypeDetails;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.converter.json.GsonBuilderUtils;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -23,6 +21,8 @@ public class PokemonController {
     @GetMapping("/pokemon/{name}")
     public Pokemon getPokemonByName(@PathVariable String name) {
         try {
+            double t =System.currentTimeMillis(); //Tiempo que empieza a ejecutar la función
+            double f;//Este va a ser cuando termina
             Pokemon pokemon = pokemonClientApi.getDataPokemon(name);
             PokemonDescription description = pokemonClientApi.getPokemonDescription(name);
 
@@ -66,13 +66,15 @@ public class PokemonController {
             pokemon.setImagenOficial(pokemon.getSprites().getOther().getOfficialArtwork().getFront_default());
 
 
+
             pokemon.getStats().get(0).setName("Vida");
             pokemon.getStats().get(1).setName("Ataque");
             pokemon.getStats().get(2).setName("Defensa");
             pokemon.getStats().get(3).setName("Ataque especial");
             pokemon.getStats().get(4).setName("Defensa especial");
             pokemon.getStats().get(5).setName("Velocidad");
-
+            f= System.currentTimeMillis();
+            pokemon.setTiempo(f-t);//Tiempo de final - tiempo de comienzo, nos da el tiempo en MS
 
             return pokemon;
         } catch (Exception e) {

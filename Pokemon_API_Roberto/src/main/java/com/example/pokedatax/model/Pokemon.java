@@ -20,14 +20,12 @@ public class Pokemon {
     private String tipo2;
     private List<Types> types;
     private List<Stats> stats;
-    private List<TypeDetails> weaknesses;
-    private List<damage_relations> doubledamage;
     private List<String> debilidades;
-    private List<Description> description;
     private String flavor_text;
     private String imagen;//Aca se guardara la imagen que pondremos en el front
     private Sprites sprites;//Este objeto es para buscar la imagen, recuerda que en las apis {} son clases
     private String imagenOficial;
+    private double tiempo;
 
     @Setter
     @Getter
@@ -100,4 +98,3 @@ public class Pokemon {
 
 
 }
-//https://pokeapi.co/api/v2/pokemon-species/257
