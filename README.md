@@ -6,13 +6,13 @@ Steps to make the App work:
 
 1. Clone the project from GitHub.
 2. Set up the frontend:
-  1. Open the pokemon-app-frontend folder.
-  2. Run the command npm install in the console to install the necessary dependencies.
-  3. Run the command npm run dev to start the frontend.
+     1. Open the pokemon-app-frontend folder.
+     2. Run the command npm install in the console to install the necessary dependencies.
+     3. Run the command npm run dev to start the frontend.
 3. Set up the backend:
-  1. JDK 17 must be installed.
-  2. Go to the Pokemon_API_Roberto folder.
-  3. Enter the src/main/java/com/example/pokedatax/PokeDataxApplication.java file and run it.
+     1. JDK 17 must be installed.
+     2. Go to the Pokemon_API_Roberto folder.
+     3. Enter the src/main/java/com/example/pokedatax/PokeDataxApplication.java file and run it.
 4. Have fun with the Pokédex!
 _____________________________________________________________________
 
