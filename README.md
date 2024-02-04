@@ -1,4 +1,4 @@
-This is an Application built with React (Javascript) - Spring Boot (Java).
+This is an Application built using React (Javascript) - Spring Boot (Java).
 
 You can search for any Pokémon you want by simply typing its name and pressing the green button. Then, as if by magic, a photo of the searched Pokémon, a brief description, and its statistics will appear!
 
