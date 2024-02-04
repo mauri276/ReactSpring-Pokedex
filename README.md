@@ -1,3 +1,7 @@
+This is an Application built with React (Javascript) - Spring Boot (Java).
+
+You can search for any Pokémon you want by simply typing its name and pressing the green button. Then, as if by magic, a photo of the searched Pokémon, a brief description, and its statistics will appear!
+
 Steps to make the App work:
 
 1. Clone the project from GitHub.
@@ -11,6 +15,10 @@ Steps to make the App work:
   3. Enter the src/main/java/com/example/pokedatax/PokeDataxApplication.java file and run it.
 4. Have fun with the Pokédex!
 _____________________________________________________________________
+
+Esta es una Aplicación hecha en React (Javascript)- Spring Boot (Java).
+
+Puedes buscar cualquier pokemon que quieras tan solo escribiendo su nombre y presionando el botón verde. A continuación, y como por arte de magia ¡aparecerá una foto del Pokemon buscado, una pequeña descripción y sus estadísticas!
 
 Pasos para hacer funcionar la App:
 1. Clonar el proyecto desde github.
