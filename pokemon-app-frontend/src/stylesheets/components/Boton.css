@@ -3,6 +3,7 @@
   border-radius: 100%;
   border: var(--border-input) double var(--black);
   outline: var(--outline-input) solid black;
+  cursor: pointer;
 }
 
 .form_btn img {

@@ -4,9 +4,9 @@ import Form from "./Form";
 import Resultados from "./Resultados"
 import '../stylesheets/components/Pokedex.css';
 
-function Pokedex (props) {
+function Pokedex(props) {
 
-    const [pokemonData, setPokemonData] = useState (null);
+    const [pokemonData, setPokemonData] = useState(null);
 
     const buscarPokemon = pokemon => {
         ClientService.getPokemon(pokemon).then(response => {
@@ -17,18 +17,13 @@ function Pokedex (props) {
         });
     }
 
-    return(
+    return (
         <div className="main-pokedex_container">
             <div className="col-1">
-                <Form 
-                    onSubmit={ buscarPokemon }
+                <Resultados pokemonData={pokemonData} />
+                <Form
+                    onSubmit={buscarPokemon}
                 />
-                <div className="control-pokedex_container">
-                    <img src="/img/control-pokedex.png" className="control-pokedex_img" alt="Control-Pokedex" />
-                </div>
-            </div>
-            <div className="col-2">
-                <Resultados pokemonData = { pokemonData } />
             </div>
         </div>
     )

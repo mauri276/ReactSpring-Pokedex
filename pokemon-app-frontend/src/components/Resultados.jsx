@@ -1,12 +1,13 @@
 import React from "react";
 import Stats from './Stats.jsx';
 import '../stylesheets/components/Resultados.css';
+import DescriptionOutput from './result/DescriptionOutput.jsx'
 
-function Resultados ( props ) {
+function Resultados(props) {
 
     const extraerTipo = data => {
-        if (data){
-            if (data.tipo2 != null){
+        if (data) {
+            if (data.tipo2 != null) {
                 return data.tipo1 + ',' + data.tipo2;
             } else {
                 return data.tipo1;
@@ -19,9 +20,8 @@ function Resultados ( props ) {
     return (
         <>
             <div className="col-pantalla-type">
-                <div className="type_container">
-                    <textarea name="" id="" readOnly className="pokemon-type_textarea" value={ extraerTipo(props.pokemonData) }/>
-                </div>
+                <DescriptionOutput />
+                {/* TODO agregar tipo en la pantalla con extraerTipo(props.pokemonData)*/}
                 <div className="pantalla-pokedex_container">
                     {props.pokemonData ? <h2 className="pokemon_name">{props.pokemonData.name}</h2> : null}
                     <div className="pokemon-information_container">
@@ -29,13 +29,10 @@ function Resultados ( props ) {
                             {props.pokemonData ? <img src={props.pokemonData.imagenOficial} className="pokemon_img" alt="Img del Pokemon" /> : null}
                         </div>
                         <div className="stats_container">
-                            {props.pokemonData ? <Stats pokemonData = { props.pokemonData }/> : null}
+                            {props.pokemonData ? <Stats pokemonData={props.pokemonData} /> : null}
                         </div>
                     </div>
                 </div>
-            </div>
-            <div className="description_container">
-                <textarea name="" id="" readOnly className="pokemon-description_textarea" value={props.pokemonData ? props.pokemonData.flavor_text : "Description"}/>
             </div>
         </>
     );

@@ -26,6 +26,8 @@
 }
 
 .pokemon_input::placeholder {
+  font-size: inherit;
+  line-height: inherit;
   color: var(--black);
   letter-spacing: .1em;
   font-weight: 800;
