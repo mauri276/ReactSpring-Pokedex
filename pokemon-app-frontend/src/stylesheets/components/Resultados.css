@@ -5,10 +5,10 @@
   width: 100%;
   height: 70%;
   background-color: var(--white);
-  border: .3vw double var(--border_pantalla-light-gray);
+  border: var(--border-input) double var(--border_pantalla-light-gray);
   border-top: 0px;
-  outline: .13vw solid var(--black);
-  padding: 0 5%;
+  outline: var(--outline-pantalla) solid var(--black);
+  padding: 0 var(--padding-horizontal-lg);
 }
 
 .col-pantalla-type {
@@ -44,17 +44,17 @@
 
 .stats_container {
   display: flex;
-  padding: 0 0 6% 5%;
+  padding: 0 0 var(--padding-vertical-lg) var(--padding-horizontal-lg);
   flex-basis: 60%;
   flex-direction: column;
 }
 
 .type_container{
   background-color: var(--black);
-  padding: 2.5% 5%;
+  padding: var(--padding-input);
   background-color: var(--control-pokedex_background);
-  border: .3vw double var(--black);
-  outline: .15vw solid var(--black);
+  border: var(--border-input) double var(--black);
+  outline: var(--outline-input) solid var(--black);
   border-radius: 1vw;
   width: 75%;
   display: flex;
@@ -64,10 +64,10 @@
 
 .description_container {
   background-color: var(--black);
-  padding: 2.5% 5%;
+  padding: var(--padding-input);
   background-color: var(--control-pokedex_background);
-  border: .3vw double var(--black);
-  outline: .15vw solid var(--black);
+  border: var(--border-input) double var(--black);
+  outline: var(--outline-input) solid var(--black);
   border-radius: 1vw;
   height: 55%;
   width: 30%;
@@ -78,11 +78,11 @@
 
 .pokemon-type_textarea {
   resize: none;
-  border: .3vw double var(--black);
+  border: var(--border-input) double var(--black);
   border-radius: 1vw;
-  outline: .1vw solid var(--black);
-  padding: .2vw .5vw;
-  font-size: 0.625vw;
+  outline: var(--outline-input-sm) solid var(--black);
+  padding: var(--padding-input);
+  font-size: var(--input-text-size);
   background-color: var(--green);
   text-align: center;
   text-transform: uppercase;
@@ -96,9 +96,9 @@
   height: 100%;
   border: .2vw double var(--black);
   border-top: 0px;
-  outline: .12vw solid var(--black);
-  font-size: 0.625vw;
-  padding: .2vw .5vw;
+  outline: var(--outline-pantalla) solid var(--black);
+  font-size: var(--input-text-size);
+  padding: var(--padding-input);
   text-transform: uppercase;
   font-weight: 800;
 }

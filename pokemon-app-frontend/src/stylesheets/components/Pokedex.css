@@ -1,14 +1,14 @@
 .main-pokedex_container {
   display: flex;
   flex-direction: row;
-  padding: 2.5% 1%;
+  padding: var(--padding-main-container);
   background-color: var(--background_pokedex);
   width: 70vw;
   height: 80vh;
-  border: .5vw solid var(--black);
+  min-height: 500px;
+  border: var(--border-pokedex) solid var(--black);
   border-radius: 2vw;
   font-family: 'PokemonGB', Arial, Helvetica, sans-serif;
-  font-size: 0.729vw; /* 14 px en 1920px de vw */
   letter-spacing: -.1em;
 }
 
@@ -32,9 +32,9 @@
 .control-pokedex_container {
   background: var(--control-pokedex_background);
   border-radius: 100%;
-  padding: 0.781vw;
-  border: .3vw double var(--black);
-  outline: .15vw solid var(--black);
+  padding: var(--padding-control);
+  border: var(--border-input) double var(--black);
+  outline: var(--outline-input) solid var(--black);
   width: fit-content;
 }
 

@@ -1,0 +1,22 @@
+:root {
+    /* Font */
+    --html-font-size: 16px;
+    --input-text-size: .6rem;
+
+    /* Padding */
+    --padding-input: 3px 7.5px;
+    --padding-vertical-lg: 28px;
+    --padding-lg: 25px;
+    --padding-horizontal-lg: 25px;
+    --padding-main-container: 40px 15px;
+    --padding-control: 15px;
+
+    /* Border */
+    --border-pokedex: 10px;
+    --border-input: 7px;
+
+    /* Outline */
+    --outline-pantalla: 1.5px;
+    --outline-input: 2px;
+    --outline-input-sm: 1px;
+}

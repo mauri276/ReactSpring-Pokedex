@@ -1,9 +1,24 @@
 @import './stylesheets/normalizer.css';
 @import './stylesheets/colors.css';
 @import './stylesheets/fonts.css';
+@import './stylesheets/sizes.css';
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html {
+  font-size: var(--html-font-size); /* Rem sizes come from this size */
+}
+
+html, body {
+  height: 100%;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }

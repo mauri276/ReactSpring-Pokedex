@@ -16,7 +16,7 @@ Steps to make the App work:
 4. Have fun with the Pokédex!
 _____________________________________________________________________
 
-Esta es una Aplicación hecha en React (Javascript)- Spring Boot (Java).
+Esta es una Aplicación hecha en React (Javascript) - Spring Boot (Java).
 
 Puedes buscar cualquier pokemon que quieras tan solo escribiendo su nombre y presionando el botón verde. A continuación, y como por arte de magia ¡aparecerá una foto del Pokemon buscado, una pequeña descripción y sus estadísticas!
 

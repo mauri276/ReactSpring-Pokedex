@@ -1,9 +1,9 @@
 .form_container {
   background: var(--control-pokedex_background);
-  padding: 5%;
+  padding: var(--padding-lg);
   border: .31vw double var(--black);
   border-radius: 1vw;
-  outline: .15vw solid var(--black);
+  outline: var(--outline-input) solid var(--black);
   display: flex;
   flex-direction: column;
 }
@@ -17,11 +17,11 @@
 .pokemon_input {
   background-color: var(--green);
   letter-spacing: -.1em;
-  border: .3vw double var(--black);
+  border: var(--border-input) double var(--black);
   border-radius: 1vw;
-  outline: .1vw solid var(--black);
-  padding: .2vw .5vw;
-  font-size: 0.625vw;
+  outline: var(--outline-input-sm) solid var(--black);
+  padding: var(--padding-input);
+  font-size: var(--input-text-size);
   font-weight: 800;
 }
 

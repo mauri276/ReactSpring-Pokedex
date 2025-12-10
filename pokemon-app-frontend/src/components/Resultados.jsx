@@ -19,6 +19,9 @@ function Resultados ( props ) {
     return (
         <>
             <div className="col-pantalla-type">
+                <div className="type_container">
+                    <textarea name="" id="" readOnly className="pokemon-type_textarea" value={ extraerTipo(props.pokemonData) }/>
+                </div>
                 <div className="pantalla-pokedex_container">
                     {props.pokemonData ? <h2 className="pokemon_name">{props.pokemonData.name}</h2> : null}
                     <div className="pokemon-information_container">
@@ -29,9 +32,6 @@ function Resultados ( props ) {
                             {props.pokemonData ? <Stats pokemonData = { props.pokemonData }/> : null}
                         </div>
                     </div>
-                </div>
-                <div className="type_container">
-                    <textarea name="" id="" readOnly className="pokemon-type_textarea" value={ extraerTipo(props.pokemonData) }/>
                 </div>
             </div>
             <div className="description_container">
