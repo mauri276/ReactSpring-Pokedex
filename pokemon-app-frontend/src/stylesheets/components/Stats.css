@@ -1,3 +1,16 @@
+.pokemon_stats_container {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.pokemon_stats_column {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
 .pokemon_stat {
-  display: inline-block;
+  font-size: var(--input-text-size);
 }

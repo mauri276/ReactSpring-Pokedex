@@ -10,7 +10,6 @@ function Pokedex(props) {
 
     const buscarPokemon = pokemon => {
         ClientService.getPokemon(pokemon).then(response => {
-            console.log(response.data);
             setPokemonData(response.data);
         }).catch(error => {
             console.log(error);
@@ -18,8 +17,8 @@ function Pokedex(props) {
     }
 
     return (
-        <div className="main-pokedex_container">
-            <div className="col-1">
+        <div className="pokedex-body_container">
+            <div className="pokedex-content-container">
                 <Resultados pokemonData={pokemonData} />
                 <Form
                     onSubmit={buscarPokemon}

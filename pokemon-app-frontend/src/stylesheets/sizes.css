@@ -19,4 +19,13 @@
     --outline-pantalla: 1.5px;
     --outline-input: 2px;
     --outline-input-sm: 1px;
+
+    /* Buton */
+    --button-md: 50px;
+
+    /* Gap */
+    --gap-vertical-md: 2em;
+
+    /* Img */
+    --pokemon-img: 200px
 }

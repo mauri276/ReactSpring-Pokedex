@@ -1,8 +1,9 @@
 .form_btn {
-  width: fit-content;
+  padding: 0;
+  width: var(--button-md);
   border-radius: 100%;
   border: var(--border-input) double var(--black);
-  outline: var(--outline-input) solid black;
+  outline: var(--outline-input) solid var(--black);
   cursor: pointer;
   transition: .2s all ease;
 }
@@ -13,7 +14,7 @@
 }
 
 .form_btn:focus {
-  transform: scale(1.1);
+  transform: scale(1.05);
   transition: .2s all ease;
 }
 
@@ -30,17 +31,12 @@
 }
 
 .form_btn img {
-  width: 1.563vw;
-  height: 1.563vw;
   border-radius: inherit;
-  vertical-align: bottom;
+  vertical-align: middle;
+  object-fit: contain;
+  max-width: 100%;
 }
 
 .form_btn:active {
   transform: scale(0.9);
-}
-
-.form_btn[type="submit"] img {
-  width: 2.604vw;
-  height: 2.604vw;
 }
