@@ -1,55 +1,115 @@
-import React, { useState } from "react";
-import Boton from "./Boton";
+import React, { useEffect, useRef, useState } from "react";
+import PokemonHintsService from "../services/PokemonHintsService";
 import "../stylesheets/components/Form.css";
 
 function Form(props) {
+
     const [input, setInput] = useState("");
+    const [pokemonList, setPokemonList] = useState([]);
+    const [hints, setHints] = useState([]);
+    const [activeIndex, setActiveIndex] = useState(-1);
+    const itemsRef = useRef([]);
+
+    useEffect(() => {
+        PokemonHintsService.getPokemonNames()
+            .then(setPokemonList)
+            .catch(console.error);
+    }, []);
+
+    useEffect(() => {
+        if (activeIndex >= 0 && itemsRef.current[activeIndex]) {
+            itemsRef.current[activeIndex].scrollIntoView({
+                block: "nearest"
+            });
+        }
+    }, [activeIndex]);
 
     const validarInput = (value) => {
-        /*
-            / indica el inicio y el final de la expresión regular.
-            ^ dentro de los corchetes [] significa que se busca cualquier carácter que no sea uno de los que están dentro de los corchetes.
-            a-z significa que se busca cualquier letra minúscula del alfabeto inglés, desde la a hasta la z.
-            A-Z significa que se busca cualquier letra mayúscula del alfabeto inglés, desde la A hasta la Z.
-            ' significa que se busca el carácter de la comilla simple.
-            g al final de la expresión regular significa que se busca de forma global, es decir, que se encuentran todas las coincidencias posibles en la cadena de texto, no solo la primera.
-        */
         return value.replace(/[^a-zA-Z']/g, "");
     };
 
     const manejarCambio = (e) => {
-        const valorLimpio = validarInput(e.target.value);
-        setInput(valorLimpio);
-    };
+        const valor = validarInput(e.target.value).toLowerCase();
+        setInput(valor);
 
-    const manejarClear = () => {
-        setInput("");
-    };
-
-    const manejarEnvio = (e) => {
-        e.preventDefault();
-        if (input !== "") {
-            props.onSubmit(input.toLowerCase());
+        if (!valor) {
+            setHints([]);
+            setActiveIndex(-1);
+            return;
         }
+
+        const filtrados = pokemonList
+            .filter(name => name.startsWith(valor))
+            .slice(0, 20);
+
+        setHints(filtrados);
+        setActiveIndex(filtrados.length ? 0 : -1);
+    };
+
+    const manejarKeyDown = (e) => {
+        if (!hints.length) return;
+
+        if (e.key === "ArrowDown") {
+            e.preventDefault();
+            setActiveIndex(prev =>
+                prev < hints.length - 1 ? prev + 1 : 0
+            );
+        }
+
+        if (e.key === "ArrowUp") {
+            e.preventDefault();
+            setActiveIndex(prev =>
+                prev > 0 ? prev - 1 : hints.length - 1
+            );
+        }
+
+        if (e.key === "Tab") {
+            e.preventDefault();
+            setActiveIndex(prev =>
+                prev < hints.length - 1 ? prev + 1 : 0
+            );
+        }
+
+        if (e.key === "Enter" && activeIndex >= 0) {
+            e.preventDefault();
+            seleccionarHint(hints[activeIndex]);
+        }
+    };
+
+    const seleccionarHint = (pokemon) => {
+        setInput(pokemon);
+        setHints([]);
+        setActiveIndex(-1);
+        props.onSubmit(pokemon);
     };
 
     return (
         <div className="form_container">
-            <form onSubmit={manejarEnvio}>
-                <input
-                    type="text"
-                    id="pokemon_input"
-                    className="pokemon_input"
-                    placeholder="NOMBRE DEL POKEMÓN"
-                    value={input}
-                    onChange={manejarCambio}
-                />
+            <input
+                type="text"
+                id="pokemon_input"
+                className="pokemon_input"
+                placeholder="NOMBRE DEL POKÉMON"
+                value={input}
+                onChange={manejarCambio}
+                onKeyDown={manejarKeyDown}
+                autoComplete="off"
+            />
 
-                <div className="btn_group">
-                    <Boton btn_clear={true} onClick={manejarClear} />
-                    <Boton btn_clear={false} />
-                </div>
-            </form>
+            <div className="pokemon-hints-container">
+                <ul className="pokemon-hints">
+                    {hints.map((pokemon, index) => (
+                        <li
+                            key={pokemon}
+                            ref={el => itemsRef.current[index] = el}
+                            className={index === activeIndex ? "active" : ""}
+                            onClick={() => seleccionarHint(pokemon)}
+                        >
+                            {pokemon}
+                        </li>
+                    ))}
+                </ul>
+            </div>
         </div>
     );
 }

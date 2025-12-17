@@ -8,16 +8,18 @@
 }
 
 .pantalla-pokedex_container {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   width: 100%;
   height: 400px;
-  background-color: var(--white);
+  background-color: var(--green);
   border: var(--border-input) double var(--border_pantalla-light-gray);
   border-top: 0px;
   outline: var(--outline-pantalla) solid var(--black);
   padding: 0 var(--padding-horizontal-lg);
+  overflow: hidden;
 }
 
 .pokemon_name {
@@ -50,4 +52,60 @@
   padding: 0 0 var(--padding-vertical-lg) var(--padding-horizontal-lg);
   flex-basis: 60%;
   flex-direction: row;
+}
+
+/* Loader */
+.loading-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 4px solid var(--black);
+  color: var(--black);
+  text-align: center;
+}
+
+.loading-text {
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.loading-dots {
+  font-size: 14px;
+  animation: blink 1.3s infinite steps(1);
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Info */
+
+.info-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 4px solid #0f380f;
+  text-align: center;
+}
+
+.info-text {
+  font-size: 12px;
+  padding: 0 10px;
 }
