@@ -10,10 +10,14 @@
     --padding-horizontal-lg: 25px;
     --padding-main-container: 40px 15px;
     --padding-control: 15px;
+    --padding-sm: 8px;
 
     /* Border */
     --border-pokedex: 10px;
     --border-input: 7px;
+
+    /* Border Radius*/
+    --border-radius-sm: 8px;
 
     /* Outline */
     --outline-pantalla: 1.5px;

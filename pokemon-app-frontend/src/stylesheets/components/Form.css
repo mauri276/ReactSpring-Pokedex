@@ -1,35 +1,56 @@
+.form-row {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+  border-top: 2px solid var(--black);
+}
+
 .form_container {
+  min-width: 60%;
   background: var(--control-pokedex_background);
-  padding: var(--padding-lg);
-  border: .31vw double var(--black);
+  padding: var(--padding-sm);
+  border: 0.31vw double var(--black);
   border-radius: 1vw;
   outline: var(--outline-input) solid var(--black);
   display: flex;
   flex-direction: column;
+  transition: background 0.7s, color 0.7s;
 }
 
 .form_container form {
   display: flex;
   flex-direction: column;
-  gap: .8em;
+  gap: 0.8em;
 }
 
 .pokemon_input {
   background-color: var(--green);
-  letter-spacing: -.1em;
-  border: var(--border-input) double var(--black);
-  border-radius: 1vw;
+  letter-spacing: -0.1em;
+  border: 2px solid #0f380f;
+  border-radius: var(--border-radius-sm);
   outline: var(--outline-input-sm) solid var(--black);
   padding: var(--padding-input);
   font-size: var(--input-text-size);
   font-weight: 800;
+  transition: background 0.7s, color 0.7s;
+  padding: 10px;
+}
+
+.form_container.off .pokemon_input {
+  background-color: var(--pantalla-off);
+  color: transparent;
+}
+
+.form_container.off .pokemon_input::placeholder {
+  color: transparent;
 }
 
 .pokemon_input::placeholder {
   font-size: inherit;
   line-height: inherit;
   color: var(--black);
-  letter-spacing: .1em;
+  letter-spacing: 0.1em;
   font-weight: 800;
 }
 
@@ -37,19 +58,37 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: .5em;
+  gap: 0.5em;
 }
 
 /* Hints */
-
 .pokemon-hints-container {
   width: 100%;
   height: 110px;
   margin-top: 6px;
-  background: #9bbc0f;
+  background: var(--green);
   border: 2px solid #0f380f;
   overflow-y: auto;
+  font-size: var(--input-text-size);
+  transition: background 0.7s, color 0.7s;
+  border-radius: var(--border-radius-sm);
 }
+
+.pokemon-hints-container {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.pokemon-hints-container::-webkit-scrollbar {
+  display: none;
+}
+
+.form_container.off .pokemon-hints-container {
+  background-color: var(--pantalla-off);
+  color: var(--black);
+}
+
+
 
 .pokemon-hints {
   list-style: none;

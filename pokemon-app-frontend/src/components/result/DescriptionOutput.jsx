@@ -1,18 +1,17 @@
 import React from "react";
-import '../../stylesheets/components/result/DescriptionOutput.css'
+import "../../stylesheets/components/result/DescriptionOutput.css";
 
-function DescriptionOutput(props) {
+function DescriptionOutput({ pokemonData, poweredOn }) {
     return (
-        <>
-            <div className="description_container">
-                <div>
-                    <p className="description-text">
-                        {props.pokemonData ? props.pokemonData.flavor_text : "Description"}
-                    </p>
-                </div>
+        <div className={`description_container ${poweredOn ? "on" : "off"}`}>
+            <div>
+                <p className="description-text">
+                    {poweredOn ? (pokemonData?.flavor_text || "Description") : ""}
+                </p>
             </div>
-        </>
-    )
+        </div>
+
+    );
 }
 
 export default DescriptionOutput;

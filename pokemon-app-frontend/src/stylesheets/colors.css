@@ -1,10 +1,9 @@
-/* Aquí se declaran todos los colores a usar */
-
-:root { 
-  --background_pokedex: #FE3335;
+:root {
+  --background_pokedex: #ed4242;
   --black: #000;
   --control-pokedex_background: rgb(119, 119, 122);
-  --green: #8FC83B;
+  --green: #9bbc0f;
   --white: #fff;
   --border_pantalla-light-gray: #90949c;
+  --pantalla-off: rgb(34 34 34);
 }

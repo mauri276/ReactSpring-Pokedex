@@ -1,15 +1,15 @@
 .description_container {
-    background-color: var(--black);
-    padding: var(--padding-input);
     background-color: var(--control-pokedex_background);
     border: var(--border-input) double var(--black);
     outline: var(--outline-input) solid var(--black);
     border-radius: 1vw;
     width: 100%;
     height: 100px;
+    padding: var(--padding-sm);
     display: flex;
     flex-direction: column;
     align-items: center;
+    transition: background 0.3s, color 0.3s;
 }
 
 .description_container div {
@@ -17,9 +17,15 @@
     width: 100%;
     height: 100%;
     border-top: 0px;
-    border: .2vw double var(--black);
-    outline: var(--outline-pantalla) solid var(--black);
+    border: 2px solid #0f380f;
+    border-radius: var(--border-radius-sm);
     padding: var(--padding-input);
+    transition: background 0.7s, color 0.7s;
+}
+
+.description_container.off div {
+    background-color: var(--pantalla-off);
+    color: var(--black);
 }
 
 .description-text {
