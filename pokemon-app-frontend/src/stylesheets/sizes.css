@@ -29,6 +29,7 @@
 
     /* Gap */
     --gap-vertical-md: 2em;
+    --gap-hporizontal-sm: .5em;
 
     /* Img */
     --pokemon-img: 200px

@@ -1,0 +1,40 @@
+{
+  "es": {
+    "power": "Encender / Apagar",
+    "search": "Buscar Pokémon",
+    "loading": "Cargando...",
+    "error": "Pokémon no encontrado",
+    "hint_empty": "Sin coincidencias",
+    "pokemonImageAlt": "Imagen del Pokémon",
+    "searching": "B U S C A N D O",
+    "descriptionPlaceholder": "Descripción",
+
+    "stats": {
+      "hp": "Vida",
+      "attack": "Ataque",
+      "defense": "Defensa",
+      "special-attack": "Ataque especial",
+      "special-defense": "Defensa especial",
+      "speed": "Velocidad"
+    }
+  },
+  "en": {
+    "power": "Power On / Off",
+    "search": "Search Pokémon",
+    "loading": "Loading...",
+    "error": "Pokémon not found",
+    "hint_empty": "No matches",
+    "pokemonImageAlt": "Pokémon image",
+    "searching": "S E A R C H I N G",
+    "descriptionPlaceholder": "Description",
+
+    "stats": {
+      "hp": "HP",
+      "attack": "Attack",
+      "defense": "Defense",
+      "special-attack": "Special Attack",
+      "special-defense": "Special Defense",
+      "speed": "Speed"
+    }
+  }
+}

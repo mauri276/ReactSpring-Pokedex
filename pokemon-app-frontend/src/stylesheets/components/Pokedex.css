@@ -21,7 +21,33 @@
   gap: var(--gap-vertical-md);
 }
 
+/* Botón idioma */
+
+.lang-toggle {
+  margin-left: auto;
+  background: var(--black);
+  color: var(--white);
+  border: 2px solid var(--black);
+  padding: 2px 6px;
+  font-family: 'PokemonGB', Arial, Helvetica, sans-serif;
+  cursor: pointer;
+}
+
+
 /* BOTÓN DE ENCENDIDO */
+
+.power-button-container {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: var(--gap-hporizontal-sm);
+  font-size: .8rem;
+  margin-bottom: 15px;
+}
+
+.power-button-container span {
+  align-self: center;
+}
 
 .power-button {
   width: 20px;
@@ -30,7 +56,6 @@
   background: #500;
   border: 2px solid #300;
   cursor: pointer;
-  margin-bottom: 10px;
 }
 
 .power-button.on {

@@ -1,34 +1,51 @@
 import React from "react";
-import '../stylesheets/components/Stats.css';
+import PropTypes from "prop-types";
+import "../stylesheets/components/Stats.css";
 
-function Stats({ pokemonData }) {
-    if (!pokemonData.stats)
-        return null;
+function Stats({ pokemonData, t }) {
+  if (!pokemonData?.stats) return null;
 
-    const firstColumnStats = ['Vida', 'Ataque', 'Defensa'];
-    const secondColumnStats = ['Ataque especial', 'Defensa especial', 'Velocidad'];
+  const firstColumnStats = ["hp", "attack", "defense"];
+  const secondColumnStats = ["special-attack", "special-defense", "speed"];
 
-    const statsColumn1 = pokemonData.stats.filter(stat => firstColumnStats.includes(stat.name));
-    const statsColumn2 = pokemonData.stats.filter(stat => secondColumnStats.includes(stat.name));
+  const statsColumn1 = pokemonData.stats.filter(stat =>
+    firstColumnStats.includes(stat.key)
+  );
 
-    return (
-        <div className="pokemon_stats_container">
-            <div className="pokemon_stats_column">
-                {statsColumn1.map((stat, index) => (
-                    <p className="pokemon_stat" key={stat.name + index}>
-                        {stat.name || 'N/A'}: {stat.base_stat || 'N/A'}
-                    </p>
-                ))}
-            </div>
-            <div className="pokemon_stats_column">
-                {statsColumn2.map((stat, index) => (
-                    <p className="pokemon_stat" key={stat.name + index}>
-                        {stat.name || 'N/A'}: {stat.base_stat || 'N/A'}
-                    </p>
-                ))}
-            </div>
-        </div>
-    );
+  const statsColumn2 = pokemonData.stats.filter(stat =>
+    secondColumnStats.includes(stat.key)
+  );
+
+  const renderStat = (stat) => (
+    <p className="pokemon_stat" key={stat.key}>
+      {t.stats[stat.key] || stat.key}: {stat.base_stat ?? "N/A"}
+    </p>
+  );
+
+  return (
+    <div className="pokemon_stats_container">
+      <div className="pokemon_stats_column">
+        {statsColumn1.map(renderStat)}
+      </div>
+      <div className="pokemon_stats_column">
+        {statsColumn2.map(renderStat)}
+      </div>
+    </div>
+  );
 }
+
+Stats.propTypes = {
+  pokemonData: PropTypes.shape({
+    stats: PropTypes.arrayOf(
+      PropTypes.shape({
+        key: PropTypes.string.isRequired,
+        base_stat: PropTypes.number
+      })
+    )
+  }),
+  t: PropTypes.shape({
+    stats: PropTypes.object.isRequired
+  }).isRequired
+};
 
 export default Stats;

@@ -4,12 +4,16 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
 
 import java.util.List;
 
 @Builder
-@Setter
 @Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Pokemon {
     private int id;
     private String name;
@@ -81,10 +85,11 @@ public class Pokemon {
     @Setter
     @Getter
     public static class Stats {
-        private String base_stat;
+        private String key;
+        private int base_stat;
         private String name;
-        private String url;
     }
+
 
     @Setter
     @Getter
