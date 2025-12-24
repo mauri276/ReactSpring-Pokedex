@@ -37,6 +37,16 @@
   padding: 10px;
 }
 
+.pokemon_input:-webkit-autofill,
+.pokemon_input:-webkit-autofill:hover,
+.pokemon_input:-webkit-autofill:focus,
+.pokemon_input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 1000px var(--green) inset !important;
+  -webkit-text-fill-color: #0f380f !important;
+  transition: background-color 9999s ease-in-out 0s;
+}
+
+
 .form_container.off .pokemon_input {
   background-color: var(--pantalla-off);
   color: transparent;

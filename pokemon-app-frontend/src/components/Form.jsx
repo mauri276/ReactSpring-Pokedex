@@ -12,6 +12,33 @@ function Form({ onSubmit, poweredOn, t }) {
   const itemsRef = useRef([]);
 
   useEffect(() => {
+    if (!poweredOn) {
+      setHints([]);
+      setActiveIndex(-1);
+      setInput("");
+    }
+  }, [poweredOn]);
+
+
+  useEffect(() => {
+    if (!input) return;
+
+    const valor = input.toLowerCase();
+    const filtrados = pokemonList
+      .filter(name => name.startsWith(valor))
+      .slice(0, 20);
+
+    if (filtrados.length) {
+      setHints(filtrados);
+      setActiveIndex(0);
+    } else {
+      setHints([t.hint_empty]);
+      setActiveIndex(0);
+    }
+  }, [t, input, pokemonList]);
+
+
+  useEffect(() => {
     PokemonHintsService.getPokemonNames()
       .then(setPokemonList)
       .catch(console.error);
@@ -28,25 +55,32 @@ function Form({ onSubmit, poweredOn, t }) {
   const validarInput = value => value.replace(/[^a-zA-Z']/g, "");
 
   const manejarCambio = e => {
-    const valor = validarInput(e.target.value).toLowerCase();
-    setInput(valor);
+  const valor = validarInput(e.target.value).toLowerCase();
+  setInput(valor);
 
-    if (!valor) {
-      setHints([]);
-      setActiveIndex(-1);
-      return;
-    }
+  if (!valor) {
+    setHints([]);
+    setActiveIndex(-1);
+    return;
+  }
 
-    const filtrados = pokemonList
-      .filter(name => name.startsWith(valor))
-      .slice(0, 20);
+  const filtrados = pokemonList
+    .filter(name => name.startsWith(valor))
+    .slice(0, 20);
 
+  if (filtrados.length) {
     setHints(filtrados);
-    setActiveIndex(filtrados.length ? 0 : -1);
-  };
+    setActiveIndex(0);
+  } else {
+    setHints([t.hint_empty]);
+    setActiveIndex(0);
+  }
+};
+
 
   const manejarKeyDown = e => {
-    if (!hints.length) return;
+    if (!hints.length) 
+      return;
 
     if (e.key === "ArrowDown") {
       e.preventDefault();
@@ -76,16 +110,21 @@ function Form({ onSubmit, poweredOn, t }) {
   };
 
   const seleccionarHint = pokemon => {
-    setInput(pokemon);
-    setHints([]);
-    setActiveIndex(-1);
-    onSubmit(pokemon);
-  };
+  if (pokemon === t.hint_empty) 
+    return;
+
+  setInput(pokemon);
+  setHints([]);
+  setActiveIndex(-1);
+  onSubmit(pokemon);
+};
+
 
   return (
     <div className="form-row">
       <div className={`form_container ${poweredOn ? "on" : "off"}`}>
         <input
+          autoComplete="off"
           id="pokedex-form"
           type="text"
           className="pokemon_input"
@@ -119,7 +158,8 @@ Form.propTypes = {
   onSubmit: PropTypes.func.isRequired,
   poweredOn: PropTypes.bool.isRequired,
   t: PropTypes.shape({
-    search: PropTypes.string.isRequired
+    search: PropTypes.string.isRequired,
+    hint_empty: PropTypes.string.isRequired,
   }).isRequired
 };
 

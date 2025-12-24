@@ -7,36 +7,34 @@ import PropTypes from "prop-types";
 function Resultados({ pokemonData, loading, poweredOn, t }) {
 
   const tipoEmojis = {
-    fire: '🔥',
-    water: '💧',
-    grass: '🌿',
-    electric: '⚡',
-    ice: '❄️',
-    fighting: '🥊',
-    poison: '☠️',
-    ground: '🌍',
-    flying: '🕊️',
-    psychic: '🔮',
-    bug: '🐛',
-    rock: '🪨',
-    ghost: '👻',
-    dragon: '🐉',
-    dark: '🌑',
-    steel: '⚙️',
-    fairy: '✨',
-    normal: '🔘',
-  };
+    fire: { emoji: '🔥', label: t.types.fire },
+    water: { emoji: '💧', label: t.types.water },
+    grass: { emoji: '🌿', label: t.types.grass },
+    electric: { emoji: '⚡', label: t.types.electric },
+    ice: { emoji: '❄️', label: t.types.ice },
+    fighting: { emoji: '🥊', label: t.types.fighting },
+    poison: { emoji: '☠️', label: t.types.poison },
+    ground: { emoji: '🌍', label: t.types.ground },
+    flying: { emoji: '🕊️', label: t.types.flying },
+    psychic: { emoji: '🔮', label: t.types.psychic },
+    bug: { emoji: '🐛', label: t.types.bug },
+    rock: { emoji: '🪨', label: t.types.rock },
+    ghost: { emoji: '👻', label: t.types.ghost },
+    dragon: { emoji: '🐉', label: t.types.dragon },
+    dark: { emoji: '🌑', label: t.types.dark },
+    steel: { emoji: '⚙️', label: t.types.steel },
+    fairy: { emoji: '✨', label: t.types.fairy },
+    normal: { emoji: '🔘', label: t.types.normal },
+};
 
-  const extraerTipo = (data) => {
-    if (!data) return "";
-    const t1 = data.tipo1
-      ? `${tipoEmojis[data.tipo1.toLowerCase()] || ""} ${data.tipo1}`
-      : "";
-    const t2 = data.tipo2
-      ? `, ${tipoEmojis[data.tipo2.toLowerCase()] || ""} ${data.tipo2}`
-      : "";
-    return t1 + t2;
-  };
+
+  const extraerTipo = data => {
+  if (!data) return "";
+  const t1 = data.tipo1 ? `${tipoEmojis[data.tipo1].emoji} ${tipoEmojis[data.tipo1].label}` : "";
+  const t2 = data.tipo2 ? `, ${tipoEmojis[data.tipo2].emoji} ${tipoEmojis[data.tipo2].label}` : "";
+  return t1 + t2;
+};
+
 
   return (
     <div className="col-pantalla-type">
