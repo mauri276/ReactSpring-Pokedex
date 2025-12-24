@@ -12,10 +12,6 @@ You can search for any Pokémon by typing its name and pressing the button. A ph
 
 ---
 
-## How to run the app (one command)
-
-The entire project is containerized with Docker.
-
 ### Requirements
 - Docker
 - Docker Compose
@@ -24,7 +20,7 @@ Make sure Docker is running before continuing.
 
 ---
 
-## Run the application
+### Run the application
 
 1. Clone the repository
 
@@ -41,7 +37,7 @@ docker compose up --build
 
 ---
 
-## Access the app
+### Access the app
 
 http://localhost:3000/
 
@@ -49,7 +45,7 @@ Open the URL in your browser, turn on the Pokedex and start using the Pokédex t
 
 ---
 
-## Stop the application
+### Stop the application
 
 ```sh
 docker compose down
@@ -63,7 +59,7 @@ Enjoy the Pokédex.
 
 ---
 
-## Usage example
+### Usage example
 
 After running the container you should see something like this
 
@@ -87,11 +83,7 @@ Puedes buscar cualquier Pokémon escribiendo su nombre y presionando el botón. 
 
 ---
 
-## Cómo ejecutar la aplicación (un solo comando)
-
-Todo el proyecto está containerizado con Docker.
-
-### Requisitos
+## Requisitos
 - Docker
 - Docker Compose
 
@@ -116,7 +108,7 @@ docker compose up --build
 
 ---
 
-## Acceder a la aplicación
+### Acceder a la aplicación
 
 http://localhost:3000/
 
@@ -124,7 +116,7 @@ Abre la URL en tu navegador, enciende el Pokedex y comienza a usar la Pokédex p
 
 ---
 
-## Detener la aplicación
+### Detener la aplicación
 
 ```sh
 docker compose down
@@ -138,7 +130,7 @@ Disfruta la Pokédex.
 
 ---
 
-## Ejemplo de uso
+### Ejemplo de uso
 
 Después de correr el docker, deberías ver algo como esto
 
