@@ -1,33 +1,115 @@
-This is an Application built using React (Javascript) - Spring Boot (Java).
+# Pokédex App
 
-You can search for any Pokémon you want by simply typing its name and pressing the green button. Then, as if by magic, a photo of the searched Pokémon, a brief description, and its statistics will appear!
+This is an application built using **React (JavaScript) + Spring Boot (Java)**.
 
-Steps to make the App work:
+You can search for any Pokémon by typing its name and pressing the button. A photo, a short description, and the Pokémon’s statistics will be displayed.
 
-1. Clone the project from GitHub.
-2. Set up the frontend:
-     1. Open the pokemon-app-frontend folder.
-     2. Run the command npm install in the console to install the necessary dependencies.
-     3. Run the command npm run dev to start the frontend.
-3. Set up the backend:
-     1. JDK 17 must be installed.
-     2. Go to the Pokemon_API_Roberto folder.
-     3. Enter the src/main/java/com/example/pokedatax/PokeDataxApplication.java file and run it.
-4. Have fun with the Pokédex!
-_____________________________________________________________________
+---
 
-Esta es una Aplicación hecha en React (Javascript) - Spring Boot (Java).
+## How to run the app (one command)
 
-Puedes buscar cualquier pokemon que quieras tan solo escribiendo su nombre y presionando el botón verde. A continuación, y como por arte de magia ¡aparecerá una foto del Pokemon buscado, una pequeña descripción y sus estadísticas!
+The entire project is containerized with Docker.
 
-Pasos para hacer funcionar la App:
-1. Clonar el proyecto desde github.
-2. Hacer funcionar el frontend:
-     1. Abrir la carpeta pokemon-app-frontend.
-     2. Ejecutar en la consola el comando npm install para instalar las dependencias necesarias.
-     3. Ejecutar el comando npm run dev para correr el frontend.
-3. Hacer funcionar el backend:
-     1. Debe tenerse instalado el JDK 17 o superior.
-     2. Entrar a la carpeta Pokemon_API_Roberto.
-     3. Entrar al archivo src/main/java/com/example/pokedatax/PokeDataxApplication.java y ejecutarlo.
-5. ¡Divertirse con el pokedex!
+### Requirements
+- Docker
+- Docker Compose
+
+Make sure Docker is running before continuing.
+
+---
+
+## Run the application
+
+1. Clone the repository
+
+```sh
+git clone https://github.com/mauri276/ReactSpring-Pokedex.git
+cd ReactSpring-Pokedex
+```
+
+2. Start everything with one command
+
+```sh
+docker compose up --build
+```
+
+---
+
+## Access the app
+
+http://localhost:3000/
+
+Open the URL in your browser, turn on the Pokedex and start using the Pokédex to search for Pokémon.
+
+---
+
+## Stop the application
+
+```sh
+docker compose down
+```
+
+This stops and removes all containers.
+
+---
+
+Enjoy the Pokédex.
+
+---
+
+# Pokédex App
+
+Esta es una aplicación construida con **React (JavaScript) + Spring Boot (Java)**.
+
+Puedes buscar cualquier Pokémon escribiendo su nombre y presionando el botón. Se mostrará una imagen, una breve descripción y las estadísticas del Pokémon.
+
+---
+
+## Cómo ejecutar la aplicación (un solo comando)
+
+Todo el proyecto está containerizado con Docker.
+
+### Requisitos
+- Docker
+- Docker Compose
+
+Asegúrate de que Docker esté en ejecución antes de continuar.
+
+---
+
+## Ejecutar la aplicación
+
+1. Clona el repositorio
+
+```sh
+git clone https://github.com/mauri276/ReactSpring-Pokedex.git
+cd ReactSpring-Pokedex
+```
+
+2. Inicia todo con un solo comando
+
+```sh
+docker compose up --build
+```
+
+---
+
+## Acceder a la aplicación
+
+http://localhost:3000/
+
+Abre la URL en tu navegador, enciende el Pokedex y comienza a usar la Pokédex para buscar Pokémon.
+
+---
+
+## Detener la aplicación
+
+```sh
+docker compose down
+```
+
+Esto detiene y elimina todos los contenedores.
+
+---
+
+Disfruta la Pokédex.

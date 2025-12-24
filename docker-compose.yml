@@ -1,0 +1,14 @@
+services:
+  backend:
+    build: ./pokedex-api
+    container_name: spring-backend
+    ports:
+      - "8080:8080"
+
+  frontend:
+    build: ./pokedex-app
+    container_name: react-frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
