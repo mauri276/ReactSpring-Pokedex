@@ -1,5 +1,11 @@
 # Pokédex App
 
+[English](#english) | [Español](#español)
+
+----
+
+## English
+
 This is an application built using **React (JavaScript) + Spring Boot (Java)**.
 
 You can search for any Pokémon by typing its name and pressing the button. A photo, a short description, and the Pokémon’s statistics will be displayed.
@@ -57,7 +63,7 @@ Enjoy the Pokédex.
 
 ---
 
-# Pokédex App
+## Español
 
 Esta es una aplicación construida con **React (JavaScript) + Spring Boot (Java)**.
 
