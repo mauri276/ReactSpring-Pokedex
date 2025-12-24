@@ -63,6 +63,22 @@ Enjoy the Pokédex.
 
 ---
 
+## Usage example
+
+After running the container you should see something like this
+
+<img width="1897" height="874" alt="image" src="https://github.com/user-attachments/assets/8ed9cc51-d977-47fb-aa3e-70c1f5d0c2d8" />
+
+Then, turn the Pokedex on clicking the power button
+
+<img width="1900" height="871" alt="image" src="https://github.com/user-attachments/assets/b7d1d7ae-862c-4245-a854-7ba265a37826" />
+
+Just write the name of a Pokémon and press enter / click
+
+<img width="1896" height="869" alt="image" src="https://github.com/user-attachments/assets/ac2f3ad3-d222-4bbe-a104-70b850bb2b7a" />
+
+---
+
 ## Español
 
 Esta es una aplicación construida con **React (JavaScript) + Spring Boot (Java)**.
@@ -119,3 +135,21 @@ Esto detiene y elimina todos los contenedores.
 ---
 
 Disfruta la Pokédex.
+
+---
+
+## Ejemplo de uso
+
+Después de correr el docker, deberías ver algo como esto
+
+<img width="1897" height="874" alt="image" src="https://github.com/user-attachments/assets/8ed9cc51-d977-47fb-aa3e-70c1f5d0c2d8" />
+
+Enciende el Pokedex haciendo click en el botón de encendido
+
+<img width="1900" height="871" alt="image" src="https://github.com/user-attachments/assets/b7d1d7ae-862c-4245-a854-7ba265a37826" />
+
+Simplemente escribe el nombre de un Pokémon y presiona enter / haz click
+
+<img width="1896" height="869" alt="image" src="https://github.com/user-attachments/assets/ac2f3ad3-d222-4bbe-a104-70b850bb2b7a" />
+
+---
